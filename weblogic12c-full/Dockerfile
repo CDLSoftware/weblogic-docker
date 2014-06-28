@@ -31,7 +31,7 @@ RUN mkdir /u01/oracle/.inventory
 ENV CONFIG_JVM_ARGS -Djava.security.egd=file:/dev/./urandom
 RUN java -jar fmw_12.1.3.0.0_wls.jar -silent -responseFile /u01/install.file -invPtrLoc /u01/oraInst.loc -jreLoc /usr/lib/jvm/java-7-oracle
 RUN /u01/oracle/home/wlserver/common/bin/wlst.sh -skipWLSModuleScanning /u01/create-wls-domain.py
-RUN rm -f /u01/create-wls-domain.py /u01/oraInst.loc /u01/install.file
+RUN rm -f /u01/create-wls-domain.py /u01/oraInst.loc /u01/install.file /u01/fmw_12.1.3.0.0_wls.jar
 RUN echo ". /u01/oracle/home/user_projects/domains/base_domain/bin/setDomainEnv.sh" >> /u01/oracle/.bashrc
 RUN echo "export PATH=$PATH:/u01/oracle/home/user_projects/domains/base_domain/bin" >> /u01/oracle/.bashrc
 
