@@ -28,6 +28,7 @@ WORKDIR /u01
 USER oracle
 
 RUN mkdir /u01/oracle/.inventory
+ENV CONFIG_JVM_ARGS -Djava.security.egd=file:/dev/./urandom
 RUN java -jar wls12c_full.jar -silent -responseFile /u01/install.file -invPtrLoc /u01/oraInst.loc -jreLoc /usr/lib/jvm/java-7-oracle
 RUN /u01/oracle/home/wlserver/common/bin/wlst.sh -skipWLSModuleScanning /u01/create-wls-domain.py
 RUN rm -f /u01/create-wls-domain.py /u01/oraInst.loc /u01/install.file
