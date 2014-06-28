@@ -31,7 +31,7 @@ WORKDIR /u01/oracle/wls12130
 RUN sh configure.sh -silent
 ENV CONFIG_JVM_ARGS -Djava.security.egd=file:/dev/./urandom
 RUN /u01/oracle/wls12130/wlserver/common/bin/wlst.sh -skipWLSModuleScanning /u01/create-wls-domain.py
-RUN rm /u01/create-wls-domain.py 
+RUN rm /u01/create-wls-domain.py /u01/wls1213_dev.zip
 
 RUN echo ". /u01/oracle/wls12130/user_projects/domains/base_domain/bin/setDomainEnv.sh" >> /u01/oracle/.bashrc
 RUN echo "export PATH=$PATH:/u01/oracle/wls12130/user_projects/domains/base_domain/bin" >> /u01/oracle/.bashrc
