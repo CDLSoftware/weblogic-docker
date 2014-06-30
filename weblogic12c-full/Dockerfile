@@ -1,8 +1,12 @@
 #
-# Oracle Dockerfile for WebLogic 12.1.2 Full Distro
+# Oracle Dockerfile for WebLogic 12.1.3 FULL Distro
+# 
+# Download fmw_12.1.3.0.0_wls.jar from www.oracle.com/technetwork/middleware/weblogic/downloads/index.html
+# and put it in the same dir as this Dockerfile
 #
-# https://github.com/oracle/docker
+# https://github.com/weblogic-community/weblogic-docker
 #
+
 
 # Pull base image
 FROM dockerfile/java
